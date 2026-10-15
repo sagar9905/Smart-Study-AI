@@ -12,10 +12,11 @@ import { notFound, errorHandler } from "./middleware/error.middleware.js";
 
 const app = express();
 const allowedOrigins = new Set([
-  process.env.CLIENT_URL || "http://localhost:5173",
+  process.env.CLIENT_URL,
   "http://localhost:5173",
-  "http://127.0.0.1:5173"
-]);
+  "http://127.0.0.1:5173",
+  "https://smart-study-gxq3lgb0v-sagar9905.vercel.app"
+].filter(Boolean));
 
 app.use(helmet());
 app.use(
